@@ -5,8 +5,6 @@ const html = require('choo/html')
 const app = choo()
 
 
-app.model(model)
-
 const layout = view => (state, prev, send) => {
   return html`
   <div class="tile">
@@ -15,10 +13,15 @@ const layout = view => (state, prev, send) => {
   `
 }
 
+const home = layout(require('./pages/home'))
+const test = layout(require('./pages/test'))
+
+app.model(model)
+
 app.router({ default: '/' },[
-  ['/', layout(require('./views/home'))],
-  ['/test', layout(require('./views/test')),
-    ['/:message', layout(require('./views/test'))]
+  ['/', home],
+  ['/test', test,
+    ['/:message', test]
   ]
 ])
 

@@ -1,5 +1,5 @@
-const store = require('./localStorage')
-const extend = require('./extend')
+const store = require('./utils/localStorage')
+const extend = require('./utils/extend')
 
 module.exports = {
   state: {
