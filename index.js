@@ -55,7 +55,7 @@ app.model({
 
 const view = (state, prev, send) => {
   return html`
-    <div onload=${() => send('getTodos')}>
+    <div class="tile" onload=${() => send('getTodos')}>
       <h1>Todo (${countNotDone(state.todos)})</h1>
       <form onsubmit=${onSubmit}>
         <input type="text" placeholder="New Item" id="title">
