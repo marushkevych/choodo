@@ -4,6 +4,7 @@ const Header = require('../components/Header')
 const TodoListItem = require('../components/TodoListItem')
 
 const view = (state, prev, send) => {
+
   const form = NewItemForm(title => send('addTodo', {title}))
   const header = Header(state.todos)
   const todos = state.todos.map((todo, index) => {
@@ -27,7 +28,6 @@ const view = (state, prev, send) => {
       <ul>
         ${todos}
       </ul>
-      <a href="#test/foo">Test</a>
     </div>
     `
 }
