@@ -13,12 +13,18 @@ app.use({
 
 const layout = view => (state, prev, send) => {
   return html`
-  <div class="tile">
-  <a href="#">home</a> |
-  <a href="#log">log</a> |
-    <a href="#test/foo">test location params</a>
-    ${view(state, prev, send)}
-  </div>
+    <div id="main">
+      <div class="tile">
+        <a href="#">home</a> |
+        <a href="#log">log</a> |
+        <a href="#test/foo">test location params</a>
+        ${view(state, prev, send)}
+      </div>
+      <footer>
+      <p>choo by Yoshua Wuyts</p>
+      <p>Created by Andrey Marushkevych</p>
+      </footer>
+    </div>
   `
 }
 
