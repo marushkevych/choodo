@@ -23,8 +23,8 @@ const layout = view => (state, prev, send) => {
 }
 
 
-app.model(require('./model'))
-app.model(require('./logModel'))
+app.model(require('./models/todo/model'))
+app.model(require('./models/logModel'))
 
 const home = layout(require('./pages/home'))
 const test = layout(require('./pages/testLocationParams'))
