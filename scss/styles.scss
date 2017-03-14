@@ -1,8 +1,15 @@
 @import "vars";
 
 .tile {
+  position: relative;
   background-color: $background-color;
   border: 1px solid $grey-2;
   margin: 8px;
   padding: 0 8px 8px 8px;
+}
+
+button.error {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
 }

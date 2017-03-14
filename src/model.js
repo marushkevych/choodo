@@ -14,7 +14,8 @@ module.exports = {
   effects: {
     addTodo,
     toggle,
-    deleteTodo
+    deleteTodo,
+    triggerError
   },
   subscriptions: {
     loadTodos
@@ -69,10 +70,13 @@ function deleteTodo(state, index, send, done) {
   })
 }
 
+function triggerError(state, message, send, done) {
+  done(message)
+}
+
 // --- subscribtion
 
 function loadTodos(send, done) {
-  console.log('loadTodos is called')
   store.getAll('todos', (todos) => {
     send('receiveTodos', todos, done)
   })

@@ -20,6 +20,8 @@ const view = (state, prev, send) => {
     return TodoListItem({todo, onToggle, onDelete})
   })
 
+  const triggerError = () => send('triggerError', 'test error message')
+
 
   return html`
     <div>
@@ -28,6 +30,7 @@ const view = (state, prev, send) => {
       <ul>
         ${todos}
       </ul>
+      <button class='error' onclick=${triggerError}>Trigger Error</button>
     </div>
     `
 }

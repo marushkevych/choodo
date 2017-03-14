@@ -3,6 +3,13 @@ const html = require('choo/html')
 
 const app = choo()
 
+app.use({
+  onError: function(err, state, createSend) {
+    console.error(err, state)
+    createSend('error', false)('location:set', '#error')
+  }
+})
+
 
 const layout = view => (state, prev, send) => {
   return html`
@@ -22,13 +29,15 @@ app.model(require('./logModel'))
 const home = layout(require('./pages/home'))
 const test = layout(require('./pages/testLocationParams'))
 const log = layout(require('./pages/log'))
+const error = layout(require('./pages/error'))
 
 app.router({ default: '/' },[
   ['/', home],
   ['/test', test,
     ['/:message', test]
   ],
-  ['/log', log]
+  ['/log', log],
+  ['/error', error]
 ])
 
 const tree = app.start()
