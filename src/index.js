@@ -13,11 +13,15 @@ app.use({
 
 const layout = view => (state, prev, send) => {
   return html`
-    <div id="main">
+    <div id="main" class="clearfix">
+      <nav class="float-left-box">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#log">log</a></li>
+          <li><a href="#test/foo">test location</a></li>
+        </ul>
+      </nav>
       <div class="tile">
-        <a href="#">home</a> |
-        <a href="#log">log</a> |
-        <a href="#test/foo">test location params</a>
         ${view(state, prev, send)}
       </div>
       <footer>
