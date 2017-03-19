@@ -21,7 +21,7 @@ body {
 .tile {
   // position: relative;
   // border: 1px solid $grey-2;
-  margin: 0 8px 0 8px;
+  padding: 0 8px 0 8px;
   h1 {
     margin-top: 8px;
   }
@@ -53,10 +53,11 @@ footer {
 }
 
 nav {
-  margin-left: 8px;
+  padding-left: 8px;
 }
 
-// need this in #main, so that float-left nav doesnt overflow ouside
+// need this in #main, so that float-left nav doesnt overflow down
+// when there is not much content in the .tile
 .clearfix {
   overflow: auto;
 }
@@ -72,11 +73,14 @@ li {
 
 @media screen and (min-width:500px) {
   nav {
-    float: left;
+    display: inline-block;
     width: 25%;
+    vertical-align: top;
   }
   .tile {
-    margin-left: 25%;
+    display: inline-block;
+    width: 75%;
+    vertical-align: top;
   }
 }
 @media screen and (max-width:499px) {
