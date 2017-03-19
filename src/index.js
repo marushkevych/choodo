@@ -15,11 +15,9 @@ const layout = view => (state, prev, send) => {
   return html`
     <div id="main">
       <nav>
-        <ul>
-          <li><a href="#">home</a></li>
-          <li><a href="#log">log</a></li>
-          <li><a href="#test/foo">test location</a></li>
-        </ul>
+        <div class="nav-item"><a href="#">home</a></div>
+        <div class="nav-item"><a href="#log">log</a></div>
+        <div class="nav-item"><a href="#test/foo">test location</a></div>
       </nav><div class="tile">
         ${view(state, prev, send)}
       </div>

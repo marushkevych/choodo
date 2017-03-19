@@ -2,7 +2,7 @@ const html = require('choo/html')
 
 module.exports = function Header(todos) {
   return html `
-    <h1>Todo (${countNotDone()})</h1>
+    <h2>Todo (${countNotDone()})</h2>
   `
   function countNotDone() {
     return todos.reduce((acc, val) => {

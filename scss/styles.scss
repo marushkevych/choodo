@@ -19,10 +19,9 @@ body {
 }
 
 .tile {
-  // position: relative;
-  // border: 1px solid $grey-2;
   padding: 0 8px 0 8px;
-  h1 {
+  min-height: 150px;
+  h2 {
     margin-top: 8px;
   }
 }
@@ -53,22 +52,19 @@ footer {
 }
 
 nav {
-  padding-left: 8px;
-}
+  .nav-item {
+    min-width: 50px;
+    &:hover {
+      background-color: #dce2e4;
+    }
 
-// need this in #main, so that float-left nav doesnt overflow down
-// when there is not much content in the .tile
-.clearfix {
-  overflow: auto;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-li {
-  margin-right: 8px;
+    a {
+      padding: 8px;
+      width: 100%;
+      display: block;
+      text-decoration: none;
+    }
+  }
 }
 
 @media screen and (min-width:500px) {
@@ -81,10 +77,17 @@ li {
     display: inline-block;
     width: 75%;
     vertical-align: top;
+    border-left: 1px solid $grey-2;
   }
 }
-@media screen and (max-width:499px) {
-  nav li {
-    display: inline;
+@media screen and (max-width:499px) /* mobile */ {
+  .tile {
+    border-top: 1px solid $grey-2;
+  }
+  nav .nav-item {
+    display: inline-block;
+    a {
+      text-align: center;
+    }
   }
 }

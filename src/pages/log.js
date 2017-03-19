@@ -5,7 +5,10 @@ module.exports = (state, prev, send) => {
     return html `<li>${entry}</li>`
   })
   return html`
+  <div>
+    <h2>Action Log</h2>
     <ul>
       ${logEntries}
-    </ul>`
+    </ul>
+  </div>`
 }
